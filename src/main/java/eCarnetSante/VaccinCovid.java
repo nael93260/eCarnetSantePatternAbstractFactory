@@ -4,7 +4,10 @@ public class VaccinCovid extends DoseDeVaccin{
 
 	public VaccinCovid(int idDoseVaccin) {
 		super("Covid-19", idDoseVaccin);
-		// TODO Auto-generated constructor stub
+	}
+	
+	public VaccinCovid(int idDoseVaccin, Personne personne) {
+		super(personne,"Covid-19", idDoseVaccin);
 	}
 
 	@Override

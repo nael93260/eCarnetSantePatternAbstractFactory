@@ -13,8 +13,8 @@ public class PersonneTest
     private Personne pers;
     private CarnetDeSante carnetDeSante;
     private DoseDeVaccin vaccinCovid;
-	private DoseDeVaccin vaccinGripe;
-	private DoseDeVaccin vaccinPeste;
+	private DoseDeVaccin vaccinPapillomavirus;
+	private DoseDeVaccin vaccinFievreJaune;
     
     @BeforeEach
     public void setUp() // throws java.lang.Exception
@@ -67,9 +67,9 @@ public class PersonneTest
     
     
     public void setUpDoseDeVaccin () {
-    	vaccinCovid = new DoseDeVaccin(pers,"Covid",1234);
-    	vaccinGripe = new DoseDeVaccin(pers,"Gripe",12345);
-    	vaccinPeste = new DoseDeVaccin(pers,"Peste",123456);
+    	vaccinCovid = DoseDeVaccinFactory.produirVaccin(typeVaccin.COVID, pers);
+    	vaccinPapillomavirus = DoseDeVaccinFactory.produirVaccin(typeVaccin.PAPILLOMAVIRUS, pers);
+    	vaccinFievreJaune = DoseDeVaccinFactory.produirVaccin(typeVaccin.FIEVRE_JAUNE, pers);
     }
 
     /**
@@ -78,9 +78,10 @@ public class PersonneTest
    @Test
    public void testPasPlusDuneDoseIdentique() // throws java.lang.Exception
    {
-   DoseDeVaccin d1 = new DoseDeVaccin("Covid",1234);
+   DoseDeVaccin d1 = DoseDeVaccinFactory.produirVaccin(typeVaccin.PAPILLOMAVIRUS);
+   int idVaccin=d1.getId();
    pers.ajouterDoseDeVaccin(d1);
-   DoseDeVaccin d2 = new DoseDeVaccin("Covid",1234);
+   DoseDeVaccin d2 = new VaccinPapillomavirus(idVaccin);
    try {
 	   pers.ajouterDoseDeVaccin(d2);
 	   fail( "My method didn't throw when I expected it to" );
@@ -96,7 +97,7 @@ public class PersonneTest
    public void testAjouterDosesDifferentes(){
 		setUpDoseDeVaccin();
 		assertTrue(pers.getListeDesVaccins().contains(vaccinCovid));
-		assertTrue(pers.getListeDesVaccins().contains(vaccinGripe));
-		assertTrue(pers.getListeDesVaccins().contains(vaccinPeste));
+		assertTrue(pers.getListeDesVaccins().contains(vaccinPapillomavirus));
+		assertTrue(pers.getListeDesVaccins().contains(vaccinFievreJaune));
    }
 }

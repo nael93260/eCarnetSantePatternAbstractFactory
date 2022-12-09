@@ -19,7 +19,7 @@ public class DoseDeVaccinSteps {
 	public void une_personne_que_l_on_veut_vacciner_contre_la_covid() {
 	    // Write code here that turns the phrase above into concrete actions
 	    nael = new Personne ();
-	    vaccinCovid =  new DoseDeVaccin("Covid-19", 123);
+	    vaccinCovid =  DoseDeVaccinFactory.produirVaccin(typeVaccin.COVID);
 	}
 
 	@When("elle se fait vacciner contre la covid")
@@ -37,9 +37,9 @@ public class DoseDeVaccinSteps {
 	@Given("une personne qui a recu toutes les doses  necessaire pour un vaccin contre la Covid")
 	public void une_personne_qui_a_recu_toutes_les_doses_necessaire_pour_un_vaccin_contre_la_Covid() {
 		bernard = new Personne ();
-		DoseDeVaccin vaccinCovid1ereDose =  new DoseDeVaccin("Covid-19", 1234);
-		DoseDeVaccin vaccinCovid2eDose =  new DoseDeVaccin("Covid-19", 12345);
-		DoseDeVaccin vaccinCovid3eDose =  new DoseDeVaccin("Covid-19", 12346);
+		DoseDeVaccin vaccinCovid1ereDose = DoseDeVaccinFactory.produirVaccin(typeVaccin.COVID);
+		DoseDeVaccin vaccinCovid2eDose =  DoseDeVaccinFactory.produirVaccin(typeVaccin.COVID);
+		DoseDeVaccin vaccinCovid3eDose =  DoseDeVaccinFactory.produirVaccin(typeVaccin.COVID);
 		bernard.ajouterDoseDeVaccin(vaccinCovid1ereDose);
 		bernard.ajouterDoseDeVaccin(vaccinCovid2eDose);
 		bernard.ajouterDoseDeVaccin(vaccinCovid3eDose);
@@ -65,8 +65,8 @@ public class DoseDeVaccinSteps {
 	public void une_personne_qui_a_recu_toutes_les_doses_necessaire_pour_un_vaccin_contre_la_Papillomavirus() {
 		nael = new Personne ();
 		nbDoseVaccin=0;
-		DoseDeVaccin vaccinPapillomavirus1ereDose =  new DoseDeVaccin("Papillomavirus", 1);
-		DoseDeVaccin vaccinPapillomavirus2eDose =  new DoseDeVaccin("Papillomavirus", 2);
+		DoseDeVaccin vaccinPapillomavirus1ereDose =  DoseDeVaccinFactory.produirVaccin(typeVaccin.PAPILLOMAVIRUS);
+		DoseDeVaccin vaccinPapillomavirus2eDose =  DoseDeVaccinFactory.produirVaccin(typeVaccin.PAPILLOMAVIRUS);
 		nael.ajouterDoseDeVaccin(vaccinPapillomavirus1ereDose);
 		nael.ajouterDoseDeVaccin(vaccinPapillomavirus2eDose);
 	}
@@ -92,7 +92,7 @@ public class DoseDeVaccinSteps {
 	public void une_personne_qui_a_recu_toutes_les_doses_necessaire_pour_un_vaccin_contre_la_Fievre_jaune() {
 		jean = new Personne ();
 		nbDoseVaccin=0;
-		DoseDeVaccin vaccinFievreJaune1ereDose =  new DoseDeVaccin("Fievre jaune", 1);
+		DoseDeVaccin vaccinFievreJaune1ereDose =  DoseDeVaccinFactory.produirVaccin(typeVaccin.FIEVRE_JAUNE);
 		jean.ajouterDoseDeVaccin(vaccinFievreJaune1ereDose);
 		
 	}

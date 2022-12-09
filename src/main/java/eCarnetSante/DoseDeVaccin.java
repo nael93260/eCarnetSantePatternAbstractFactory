@@ -60,6 +60,15 @@ public abstract class DoseDeVaccin {
 	}
 	
 	/**
+	 * 
+	 * @return La personne qui a recu cette Dose De Vaccin .
+	 */
+	
+	public int getId() {
+		return this.idDoseVaccin;
+	}
+	
+	/**
 	 * @return le le nombre de doses de vaccin necessaires pour avoir un shema complet.
 	 */
 	abstract int getNbDosesShemaVaccinalComplet();

@@ -4,7 +4,10 @@ public class VaccinFievreJaune extends DoseDeVaccin {
 
 	public VaccinFievreJaune(int idDoseVaccin) {
 		super("Fievre jaune", idDoseVaccin);
-		// TODO Auto-generated constructor stub
+	}
+	
+	public VaccinFievreJaune(int idDoseVaccin,Personne personne) {
+		super(personne,"Fievre jaune", idDoseVaccin);
 	}
 
 	@Override
