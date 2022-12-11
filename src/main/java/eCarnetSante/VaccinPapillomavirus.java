@@ -11,7 +11,7 @@ public class VaccinPapillomavirus extends DoseDeVaccin  {
 	}
 	
 	@Override
-	int getNbDosesShemaVaccinalComplet() {
+	public int getNbDosesShemaVaccinalComplet() {
 		return 2;
 	}
 

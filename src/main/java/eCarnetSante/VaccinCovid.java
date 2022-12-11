@@ -11,7 +11,7 @@ public class VaccinCovid extends DoseDeVaccin{
 	}
 
 	@Override
-	int getNbDosesShemaVaccinalComplet() {
+	public int getNbDosesShemaVaccinalComplet() {
 		return 3;
 		
 	}

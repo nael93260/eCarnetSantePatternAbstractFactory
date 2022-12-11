@@ -27,6 +27,11 @@ public abstract class DoseDeVaccin {
 	}
 	
 	/**
+	 * @return le le nombre de doses de vaccin necessaires pour avoir un shema complet.
+	 */
+	public abstract int getNbDosesShemaVaccinalComplet();
+	
+	/**
 	 * Permet de donner une dose du vaccin a une personne 
 	 * @param personne
 	 */
@@ -68,10 +73,6 @@ public abstract class DoseDeVaccin {
 		return this.idDoseVaccin;
 	}
 	
-	/**
-	 * @return le le nombre de doses de vaccin necessaires pour avoir un shema complet.
-	 */
-	abstract int getNbDosesShemaVaccinalComplet();
 
 	@Override
 	public int hashCode() {

@@ -12,11 +12,12 @@ Feature: US_002 Gestion des doses de vaccins
   Scenario Outline: Verifier la completion du schema vaccinal d une personne 
     Given une personne qui a recu toutes les doses  necessaire pour un vaccin contre la <maladie>
     When je regarde le nombre de doses de vaccin injectees dans la liste des des doses de vaccins de <personne>
-    Then je verifie que le nombre de doses de vaccin injectees correspond bien au <nbDosesVaccinNecessaires> pour le vaccin contre la <maladie>
+    Then je verifie que le nombre de doses de vaccin injectees correspond bien au <nbDosesVaccinRecues> pour le vaccin contre la <maladie>
 
     Examples: 
-      | personne  | maladie						|	nbDosesVaccinNecessaires  |
+      | personne  | maladie						|	nbDosesVaccinRecues  			|
       | Bernard 	|	Covid							|	3													|	
       | Nael 			| Papillomavirus 		| 2    											|
       | Jean 			| Fievre jaune 			| 1    											|
+   
       
